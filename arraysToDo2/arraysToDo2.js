@@ -66,7 +66,38 @@ function rotate(array, number) {
     }
 }
 
+
+function filterRange(array, minimum, maximum) {
+    let arr = array;
+    let min = minimum;
+    let max = maximum;
+    let again = true;
+
+    console.log("starting array:")
+    console.log(arr)
+    while (again == true) {
+        for (let i = 0; i < arr.length - 1; i++) {
+            again = false;
+            console.log("run " + i)
+            if ((arr[i] > max) || (arr[i] < min)) {
+                console.log(arr[i])
+                ind = i;
+                console.log(ind)
+                for (var j = ind + 1; j < arr.length; j++) {
+                    arr[j - 1] = arr[j];
+                }
+                arr.length--;
+                console.log(arr)
+                again = true;
+            }
+        }
+    }
+    console.log("ending array:")
+    console.log(arr)
+}
 // reverse([1, 2, 3, 4])
 // reverse([1, 2, 3, 4, 5, 6, 7])
 //rotate([1, 2, 3, 4], -2);
 //rotate([1, 2, 3, 4], 3);
+
+filterRange([9, 22, 33, 34], 2, 3)
