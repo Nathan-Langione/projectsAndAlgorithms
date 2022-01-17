@@ -88,22 +88,25 @@ function filterRange(arr, minVal, maxVal) {
     console.log(arr)
 }
 
-function filterRangeV2(arr, minVal, maxVal) {
-    var nextInd = 0; // Index where the next array value that's from min to max (inclusively) will go
-    // Loop through the array
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] >= minVal && arr[i] <= maxVal) {
-            arr[nextInd] = arr[i];
-            nextInd++; // Increment index for next valid value found
-        }
-    }
-    arr.length = nextInd; // Chop off excess values
-}
+function concat(arr1, arr2) {
+    var newArr = [];
+    var ind = 0;
 
+    for (let i = 0; i < arr1.length; i++) {
+        newArr[ind] = arr1[i];
+        ind++;
+    }
+    for (let i = 0; i < arr2.length; i++) {
+        newArr[ind] = arr2[i];
+        ind++;
+    }
+    console.log(newArr)
+    return newArr;
+}
 
 // reverse([1, 2, 3, 4])
 // reverse([1, 2, 3, 4, 5, 6, 7])
 //rotate([1, 2, 3, 4], -2);
 //rotate([1, 2, 3, 4], 3);
-
-filterRange([9, 22, 33, 34], 25, 35)
+//filterRange([9, 22, 33, 34], 25, 35)
+concatArrays([1, 2, 3], [3, 2, 1])
