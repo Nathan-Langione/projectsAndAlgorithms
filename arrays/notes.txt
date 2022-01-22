@@ -1,0 +1,6 @@
+“Truthy” and “Falsy”
+JavaScript is well known for its ‘loose’ treatment of data types. In actuality, JavaScript considers almost everything an object, since almost every possible value has a set of methods attached (valueOf, toString, etc). That said, typeof returns six possible values, suggesting that there are six top-level data types: boolean, number, string, object, function, and undefined. (A seventh, introduced in ES6, is left as an exercise for the reader.) JavaScript converts values between data types, as needed. For example, if()converts any value to a boolean, to decide which way to branch.
+
+
+
+Most values are considered something and if converted to a boolean, equate to true. Only six values are considered nothing: false, 0, NaN, "", null, undefined; these six are “falsy”, because when converted to a boolean, they equate to false. All other values are “truthy”, including all functions, objects, non-0 numbers (e.g.: -Infinity) and non-empty strings (e.g.: "0" or "false").
