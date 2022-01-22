@@ -1,0 +1,29 @@
+Stated simply, test-driven development (TDD) is a technique where you first build a test that fails before creating any new code.
+Your sole objective is then to write “just enough” clean code to pass this test. If any test (including a preexisting one) is failing, consider your status red; your only goal is to get green again.
+With TDD, software development becomes:
+create a new test,
+write code to get green,
+refactor as necessary,
+repeat.
+his practice is very common in the industry, particularly when the cost of a bug is unusually high, or when the code is long-lived or likely to become complicated. Conversely, when writing quick prototypes that are very likely to be rewritten (or even in a final product, if the costs of defects are manageably low), a significant investment in TDD may be unwarranted.
+
+
+Even in that situation, though, you should constantly think about different inputs that might break your code.
+For every challenge, think about (and ideally write down or state aloud) the pertinent test cases.
+Over time you will know the common “corner cases” to include:
+empty array,
+extremely long list,
+ etc.
+ Listing these on the whiteboard before coding is something that interviewers will appreciate.
+ Once your code is done, then revisit your tests by hand or with test code.
+ Always ask yourself “where’s the bug?”
+
+TIPS:
+Don’t panic
+Think out loud
+Ask clarifying questions
+Draw diagrams
+Consider error and corner cases
+List example inputs and what they should return
+Admit when it is suboptimal (but keep going)
+Ask “what are we optimizing for?”

@@ -1,0 +1,16 @@
+Objects and Classes
+A class definition is like a blueprint of a complex machine, from which many copies can be made.
+ Likewise, declaring a class merely informs us of that blueprint; actual objects must be individually constructed.
+ In JavaScript, class declarations take the form of functions called object constructors – when called, they create an object for the caller.
+ An object is an instance of the class, brought to life, just like a physical copy of the ideas in the blueprint.
+
+ If you have debugged JavaScript code in the browser, you may understand the call stack idea. This series of function calls led the computer to where it is right now. Whenever the currently running function returns, the JavaScript runtime looks to the call stack to help it “remember” which function it came from, as well as the state of all local variables when it called into another function.
+
+ The runtime stores variables in the stack while changing execution to another function. Setting aside call stack space for booleans and numbers is easy – regardless of value, numbers occupy a 64-bit memory chunk. However, objects are tricky: JavaScript cannot determine a priori how much space to set aside for objects. How can it quickly construct a call stack?
+
+The answer is that objects are created using a common chunk of memory set aside for variable-sized allocations. This memory is called the heap, and it is used for any unpredictable memory needs. When the system looks at your ‘blueprint’ and constructs a ‘machine’ corresponding to those plans, it goes to the heap and sets aside space for all that object’s attributes and functions. If the object needs more space, it expands into adjacent heap memory. During normal operation, the heap is wide-open for large and small allocations. The call stack is apartment space in a high-rise tower; the heap is Montana.
+
+When you create an object and store it in a local var, the system doesn’t put the object in that memory slot the way it does for a number or a boolean. It puts a reference to that heap location into your local var. References (called pointers) are fixed-size, so this enables the runtime to do its stack magic. A pointer represents an object’s location in memory, but you can think of it as an object’s contact info: its email address. True to its name, a pointer points to where the object is found. If you have information to retrieve from (or store to) an object, you “go there” by dereferencing that pointer, followed by the attribute you want within the object. This could look like myProject.name or myQuizzes[3] or even getAverage(myArr). Yes, arrays, strings, and even functions are objects – dereferenced by . or [ or ( .
+
+In JavaScript, when we are dealing with arrays. If we pass an array to a function or assign and array to equal a different variable, JavaScript is not making a copy of that array, it is simply putting the address to that array in that new variable. This is done to say memory space and make running our code quicker.
+This concept is particularly important to understand as we start to explore Linked Lists
