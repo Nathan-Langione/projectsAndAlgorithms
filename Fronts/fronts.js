@@ -51,14 +51,17 @@ class SLL {
     }
 }
 
+
+// Create new singly linked list
 let foo = new SLL();
 
+// Test functions
 foo.addFront(3)
 foo.addFront(2)
 foo.addFront(1)
 foo.addFront(3)
-
-//console.log(foo)
+console.log(foo.front())
 foo.removeFront()
-//console.log(foo)
+console.log(foo.front())
+foo.removeFront()
 console.log(foo.front())
