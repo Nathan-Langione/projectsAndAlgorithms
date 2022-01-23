@@ -77,11 +77,14 @@ class SLL {
             let runner = this.head
             // create an empty list
             let list = [];
+            let idx = 0
             while (runner !== null) {
                 // Add data from current node to list
-                list.push(runner.data);
+                // list.push(runner.data);
+                list.push("Node: " + idx + ", Value: " + runner.data);
                 //Tell our attendant to move to the next car
                 runner = runner.next
+                idx++
             }
             //console.log(list)
             return list;
@@ -99,5 +102,6 @@ foo.addFront(2)
 foo.addFront(1)
 foo.addFront(3)
 console.log(foo)
+foo.removeFront()
 console.log(foo.findSum())
 console.log(foo.display())
